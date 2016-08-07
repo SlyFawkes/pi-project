@@ -1,5 +1,4 @@
 import numpy as np
-# import pylab as plt
 import matplotlib.pyplot as plt
 from scipy import ndimage
 
@@ -41,8 +40,6 @@ def drip_images():
     for dist in x:
         imgs.append(drop(center=[5 + dist, 49])+np.random.poisson(drop(center=[5 + dist, 49])))
 
-    print(imgs)
-    
     return imgs
 
 
@@ -68,9 +65,7 @@ def plot_laplacian_rate_of_change():
     data = laplacian_rate_of_change()
     t = np.arange(0.02, 2.5, 0.02)
     plt.figure()
-    print("---------------------------------")
     print(t.shape)
-    print("---------------------------------")
     plt.step(t, data/data.max(), linewidth=2)
     plt.xlabel("Time / [Seconds]", size=14)
     plt.ylabel("Absolute Laplacian Rate of Change", size=14)
